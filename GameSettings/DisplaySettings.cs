@@ -66,7 +66,61 @@ namespace GameSettings
 
         string FxBlur;
 
+        // LM SizeMax
+        string LightmapSizeMax;
 
+        // LM Quality
+        string LightmapQuality;
+
+        // LM QUltra
+        bool LightmapQUltra;
+
+        // LM iLight
+        bool LightmapILight;
+
+        string ScreenShotExt = "jpg";
+
+        string Shadows;
+
+        string GpuSync0;
+
+        string GpuSync1;
+
+        string GpuSync2;
+
+        string GpuSync3;
+
+        uint GpuSyncTimeout;
+
+        uint MaxFps;
+
+        bool EmulateCursorGDI;
+
+        bool OptimPartDynaGeometry;
+
+        bool DisableZBufferRange;
+
+        bool DisableWindowedAntiAlias;
+
+        bool EnableFullscreenGDI;
+
+        string LightFromMap;
+
+        bool EnableCheckLags;
+
+        float AgpUseFactor;
+
+        float ParticleMaxGpuLoadMs;
+
+        bool AsyncRender;
+
+        bool MultiThread = true;
+
+        uint ThreadCountMax;
+
+        bool AutomaticEnabled;
+
+        uint AutomaticMinFps;
 
     }
 }
