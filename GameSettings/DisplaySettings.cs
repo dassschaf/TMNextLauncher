@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GameSettings
 {
-    class DisplaySettings
+    public class DisplaySettings : ISettings
     {
 
         string DisplayMode;
@@ -122,5 +122,23 @@ namespace GameSettings
 
         uint AutomaticMinFps;
 
+        public ISettings DefaultSettings()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ISettings SettingsFromJson(string json)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Returns the json string representing this DisplaySettings object
+        /// </summary>
+        /// <returns></returns>
+        public string JsonExport()
+        {
+
+        }
     }
 }

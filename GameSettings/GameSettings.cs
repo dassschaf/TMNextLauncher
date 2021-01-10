@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GameSettings
 {
-    public class GameSettings
+    public class GameSettings : ISettings
     {
 
         string GamePackQuality;
@@ -168,5 +169,24 @@ namespace GameSettings
         string AntiCheatServerUrl;
 
         string DesiredLanguageId;
+
+        public ISettings DefaultSettings()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ISettings SettingsFromJson(string json)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public string JsonExport()
+        {
+
+        }
     }
 }
