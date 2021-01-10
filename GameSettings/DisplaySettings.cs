@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Text.Json;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace GameSettings
 {
@@ -52,10 +54,10 @@ namespace GameSettings
 
         uint VehicleReflectMaxCount;
 
-        // Decals_3D (TextureDecals)
+        [JsonPropertyName("Decals_3D (TextureDecals)")]
         bool Decals3D;
 
-        // Decals_2D (TextureDecals)
+        [JsonPropertyName("Decals_2D (TextureDecals)")]
         bool Decals2D;
 
         string FxBloomHdr;
@@ -66,16 +68,16 @@ namespace GameSettings
 
         string FxBlur;
 
-        // LM SizeMax
+        [JsonPropertyName("LM SizeMax")]
         string LightmapSizeMax;
 
-        // LM Quality
+        [JsonPropertyName("LM Quality")]
         string LightmapQuality;
 
-        // LM QUltra
+        [JsonPropertyName("LM QUltra")]
         bool LightmapQUltra;
 
-        // LM iLight
+        [JsonPropertyName("LM iLight")]
         bool LightmapILight;
 
         string ScreenShotExt = "jpg";
