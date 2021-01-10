@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace GameSettings
@@ -40,6 +41,32 @@ namespace GameSettings
         uint ZClipBlock;
 
         GeometryQuality GeometryQuality;
+
+        float GeomLodScaleZ;
+
+        string WaterReflect;
+
+        bool WaterGeomStadium;
+
+        string VehicleReflect;
+
+        uint VehicleReflectMaxCount;
+
+        // Decals_3D (TextureDecals)
+        bool Decals3D;
+
+        // Decals_2D (TextureDecals)
+        bool Decals2D;
+
+        string FxBloomHdr;
+
+        string FxMotionBlur;
+
+        float FxMotionBlurIntens;
+
+        string FxBlur;
+
+
 
     }
 }
