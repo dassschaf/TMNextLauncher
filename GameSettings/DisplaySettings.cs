@@ -10,11 +10,21 @@ namespace GameSettings
     public class DisplaySettings : ISettings
     {
 
-        string DisplayMode;
+        /// d3d11
+        string RenderingApi = "d3d11";
+
+        /// Your GPU name
+        string Adapter;
+
+        DisplayMode DisplayMode;
 
         string ScreenSizeFS;
 
         string ScreenSizeWin;
+
+        bool SteroByDefault;
+
+        bool StereoAdvanced;
 
         uint RefreshRate;
 
@@ -28,13 +38,13 @@ namespace GameSettings
 
         string Antialiasing;
 
-        string DeferredAA;
+        DeferredAA DeferredAA;
 
         ShaderQuality ShaderQuality;
 
         TexturesQuality TexturesQuality;
 
-        string FilterAnisoQ;
+        TextureFiltering FilterAnisoQ;
 
         string ZClip;
 
@@ -60,13 +70,13 @@ namespace GameSettings
         [JsonPropertyName("Decals_2D (TextureDecals)")]
         bool Decals2D;
 
-        string FxBloomHdr;
+        BloomHdr FxBloomHdr;
 
-        string FxMotionBlur;
+        OnOff FxMotionBlur;
 
         float FxMotionBlurIntens;
 
-        string FxBlur;
+        OnOff FxBlur;
 
         [JsonPropertyName("LM SizeMax")]
         string LightmapSizeMax;
@@ -82,15 +92,15 @@ namespace GameSettings
 
         string ScreenShotExt = "jpg";
 
-        string Shadows;
+        ShadowQuality Shadows;
 
-        string GpuSync0;
+        GpuSync GpuSync0;
 
-        string GpuSync1;
+        GpuSync GpuSync1;
 
-        string GpuSync2;
+        GpuSync GpuSync2;
 
-        string GpuSync3;
+        GpuSync GpuSync3;
 
         uint GpuSyncTimeout;
 
@@ -131,7 +141,13 @@ namespace GameSettings
 
         public ISettings SettingsFromJson(string json)
         {
-            throw new NotImplementedException();
+            var parsedObject = JsonDocument.Parse(json);
+
+            var newSettings = new DisplaySettings();
+
+
+
+            return newSettings;
         }
 
         /// <summary>
@@ -140,7 +156,7 @@ namespace GameSettings
         /// <returns></returns>
         public string JsonExport()
         {
-
+            return JsonSerializer.Serialize(this);
         }
     }
 }

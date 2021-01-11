@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace GameSettings
 {
@@ -186,7 +187,7 @@ namespace GameSettings
         /// <returns></returns>
         public string JsonExport()
         {
-
+            return JsonSerializer.Serialize(this);
         }
     }
 }
