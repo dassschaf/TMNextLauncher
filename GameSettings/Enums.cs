@@ -1,5 +1,7 @@
 ﻿namespace GameSettings
 {
+    // unused for now,
+    // contain the allowed values nevertheless
 
     enum DisplayMode
     {
@@ -120,11 +122,13 @@
     }
 
     enum GpuSync 
-    {
+    {/* causes errors, but are still allowed values:
+
         none,
         1_frame,
         2_frames,
         3_frames,
         immediate
+      */
     }
 }
