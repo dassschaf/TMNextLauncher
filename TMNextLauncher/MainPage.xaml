@@ -9,6 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Button x:Name="button" Content="Button" Margin="10,10,0,0" VerticalAlignment="Top" Click="button_Click" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="15,48,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="244" Width="360"/>
+
 
     </Grid>
 </Page>

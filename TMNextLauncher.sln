@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMNextLauncher", "TMNextLauncher\TMNextLauncher.csproj", "{42B7BC94-A51B-436F-930C-899CC1186F09}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D} = {C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameSettings", "GameSettings\GameSettings.csproj", "{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameSettings", "GameSettings\GameSettings.csproj", "{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

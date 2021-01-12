@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using GameSettings;
+
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
 namespace TMNextLauncher
@@ -25,6 +27,15 @@ namespace TMNextLauncher
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string json = File.ReadAllText("ms-appx://../Assets/testSettings.json");
+
+            GameSettings.GameSettings settings = GameSettings.GameSettings.SettingsFromJson(json);
+
+            textBlock.Text = settings.Display.ScreenSizeFS;
         }
     }
 }
