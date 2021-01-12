@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace GameSettings
 {
-    public class DisplaySettings : ISettings
+    public class DisplaySettings
     {
 
         /// d3d11

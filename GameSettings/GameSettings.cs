@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace GameSettings
 {
-    public class GameSettings : ISettings
+    public class GameSettings
     {
 
         string GamePackQuality;
