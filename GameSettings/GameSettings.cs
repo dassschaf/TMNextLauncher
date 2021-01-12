@@ -8,196 +8,178 @@ namespace GameSettings
     public class GameSettings
     {
 
-        string GamePackQuality;
+        public string GamePackQuality;
 
-        bool IsSafeMode;
+        public bool IsSafeMode;
 
-        DisplaySettings Display;
+        public DisplaySettings Display;
 
-        DisplaySettings DisplaySafe;
+        public DisplaySettings DisplaySafe;
 
-        bool NetworkUseProxy;
+        public bool NetworkUseProxy;
 
-        string NetworkProxyUrl;
+        public string NetworkProxyUrl;
 
-        uint NetworkServerPort = 2350;
+        public uint NetworkServerPort = 2350;
 
-        uint NetworkP2PServerPort = 3450;
+        public uint NetworkP2PServerPort = 3450;
 
-        uint NetworkClientPort = 0;
+        public uint NetworkClientPort = 0;
 
-        string NetworkSpeed;
+        public string NetworkSpeed;
 
-        uint NetworkCustomUpload;
+        public uint NetworkCustomUpload;
 
-        uint NetworkCustomDownload;
+        public uint NetworkCustomDownload;
 
-        bool NetworkForceUseLocalAddress;
+        public bool NetworkForceUseLocalAddress;
 
-        string NetworkForceServerAddress;
+        public string NetworkForceServerAddress;
 
-        uint NetworkServerBroadcastLength;
+        public uint NetworkServerBroadcastLength;
 
-        bool NetworkTestInternetConnection;
+        public bool NetworkTestInternetConnection;
 
-        bool NetworkUseNatUPnP;
+        public bool NetworkUseNatUPnP;
 
-        string NetworkLastUsedMSAddress;
+        public string NetworkLastUsedMSAddress;
 
-        string NetworkLastUsedMSPath;
+        public string NetworkLastUsedMSPath;
 
-        bool FileTransferEnableUpload;
+        public bool FileTransferEnableUpload;
 
-        bool FileTransferEnableDownload;
+        public bool FileTransferEnableDownload;
 
-        bool EnableLocators;
+        public bool EnableLocators;
 
-        bool AutoUpdateFromLocatorAtInternetConnection;
+        public bool AutoUpdateFromLocatorAtInternetConnection;
 
-        bool AutoUpdateFromLocator;
+        public bool AutoUpdateFromLocator;
 
-        string AutoUpdateLocatorDBUrl;
+        public string AutoUpdateLocatorDBUrl;
 
-        bool FileTransferEnableAvatarDownload;
+        public bool FileTransferEnableAvatarDownload;
 
-        bool FileTransferEnableAvatarUpload;
+        public bool FileTransferEnableAvatarUpload;
 
-        bool FileTransferEnableAvatarLocators;
+        public bool FileTransferEnableAvatarLocators;
 
-        bool FileTransferEnableMapDownload;
+        public bool FileTransferEnableMapDownload;
 
-        bool FileTransferEnableMapUpload;
+        public bool FileTransferEnableMapUpload;
 
-        bool FileTransferEnableMapLocators;
+        public bool FileTransferEnableMapLocators;
 
-        bool FileTransferEnableMapModDownload;
+        public bool FileTransferEnableMapModDownload;
 
-        bool FileTransferEnableMapModUpload;
+        public bool FileTransferEnableMapModUpload;
 
-        bool FileTransferEnableMapModLocators;
+        public bool FileTransferEnableMapModLocators;
 
-        bool FileTransferEnableMapSkinDownload;
+        public bool FileTransferEnableMapSkinDownload;
 
-        bool FileTransferEnableMapSkinUpload;
+        public bool FileTransferEnableMapSkinUpload;
 
-        bool FileTransferEnableMapSkinLocators;
+        public bool FileTransferEnableMapSkinLocators;
 
-        bool FileTransferEnableTagDownload;
+        public bool FileTransferEnableTagDownload;
 
-        bool FileTransferEnableTagUpload;
+        public bool FileTransferEnableTagUpload;
 
-        bool FileTransferEnableTagLocators;
+        public bool FileTransferEnableTagLocators;
 
-        bool FileTransferEnableVehicleSkinDownload;
+        public bool FileTransferEnableVehicleSkinDownload;
 
-        bool FileTransferEnableVehicleSkinUpload;
+        public bool FileTransferEnableVehicleSkinUpload;
 
-        bool FileTransferEnableVehicleSkinLocators;
+        public bool FileTransferEnableVehicleSkinLocators;
 
-        bool FileTransferEnableUnknownTypeDownload;
+        public bool FileTransferEnableUnknownTypeDownload;
 
-        bool FileTransferEnableUnknownTypeUpload;
+        public bool FileTransferEnableUnknownTypeUpload;
 
-        bool FileTransferEnableUnknownTypeLocators;
+        public bool FileTransferEnableUnknownTypeLocators;
 
-        bool IsIgnorePlayerSkins;
+        public bool IsIgnorePlayerSkins;
 
-        bool IsSkipRollingDemo;
+        public bool IsSkipRollingDemo;
 
-        bool GameProfileEnableMulti;
+        public bool GameProfileEnableMulti;
 
-        string GameProfileName;
+        public string GameProfileName;
 
-        uint PlayerInfoDisplaySize;
+        public uint PlayerInfoDisplaySize;
 
-        string PlayerInfoDisplayType;
+        public string PlayerInfoDisplayType;
 
-        bool DisableReplayRecording;
+        public bool DisableReplayRecording;
 
-        string TmCarQuality;
+        public string TmCarQuality;
 
-        string TmCarParticleQuality;
+        public string TmCarParticleQuality;
 
-        string PlayerShadow;
+        public string PlayerShadow;
 
-        string PlayerOccolusion;
+        public string PlayerOccolusion;
 
-        string TmOpponents;
+        public string TmOpponents;
 
-        uint TmMaxOpponents;
+        public uint TmMaxOpponents;
 
-        string TmBackgroundQuality;
+        public string TmBackgroundQuality;
 
-        uint SmMaxPlayerResimStepPerFrame;
+        public uint SmMaxPlayerResimStepPerFrame;
 
-        bool AudioEnabled;
+        public bool AudioEnabled;
 
-        string AudioDevice_Oal;
+        public string AudioDevice_Oal;
 
-        bool AudioMuteWhenAppUnfocused;
+        public bool AudioMuteWhenAppUnfocused;
 
-        float AudioSoundVolume;
+        public float AudioSoundVolume;
 
-        float AudioMusicVolume;
+        public float AudioMusicVolume;
 
-        string AudioGlobalQuality;
+        public string AudioGlobalQuality;
 
-        bool AudioAllowEFX;
+        public bool AudioAllowEFX;
 
-        bool AudioAllowHRTF;
+        public bool AudioAllowHRTF;
 
-        bool AudioDisableDoppler;
+        public bool AudioDisableDoppler;
 
-        bool InputsAlternateMethod;
+        public bool InputsAlternateMethod;
 
-        bool InputsCaptureKeyboard;
+        public bool InputsCaptureKeyboard;
 
-        bool InputFreezeUnusedAxes;
+        public bool InputFreezeUnusedAxes;
 
-        bool InputEnableRumble;
+        public bool InputEnableRumble;
 
-        string Advertisement_Enabled;
+        public string Advertisement_Enabled;
 
-        float Advertisement_TunningCoef;
+        public float Advertisement_TunningCoef;
 
-        bool Advertisement_DisabledByUser;
+        public bool Advertisement_DisabledByUser;
 
-        bool EnableCrashLogUpload;
+        public bool EnableCrashLogUpload;
 
-        string BlackListUrl;
+        public string BlackListUrl;
 
-        string BadWordListUrl;
+        public string BadWordListUrl;
 
-        string AntiCheatServerUrl;
+        public string AntiCheatServerUrl;
 
-        string DesiredLanguageId;
+        public string DesiredLanguageId;
 
-        public ISettings DefaultSettings()
+        public static GameSettings SettingsFromJson(string json)
         {
-            throw new NotImplementedException();
+            return JsonSerializer.Deserialize<GameSettings>(json, new JsonSerializerOptions { IncludeFields = true });
         }
 
-        public ISettings SettingsFromJson(string json)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
         public string JsonExport()
         {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Converters =
-                {
-                    new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
-                }
-            };
-
-            return JsonSerializer.Serialize(this, options);
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions { IncludeFields = true });
         }
     }
 }

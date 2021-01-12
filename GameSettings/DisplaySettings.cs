@@ -7,165 +7,131 @@ using System.Text.Json.Serialization;
 
 namespace GameSettings
 {
+    [System.Serializable]
     public class DisplaySettings
     {
-
         /// d3d11
-        string RenderingApi = "d3d11";
+        public string RenderingApi = "d3d11";
 
         /// Your GPU name
-        string Adapter;
+        public string Adapter;
 
-        DisplayMode DisplayMode;
+        public string DisplayMode;
 
-        string ScreenSizeFS;
+        public string ScreenSizeFS;
 
-        string ScreenSizeWin;
+        public string ScreenSizeWin;
 
-        bool SteroByDefault;
+        public bool SteroByDefault;
 
-        bool StereoAdvanced;
+        public bool StereoAdvanced;
 
-        uint RefreshRate;
+        public uint RefreshRate;
 
-        string DisplaySync;
+        public string DisplaySync;
 
-        string TripleBuffer;
+        public string TripleBuffer;
 
-        bool Customize = true;
+        public bool Customize = true;
 
-        string Preset = "none";
+        public string Preset = "none";
 
-        string Antialiasing;
+        public string Antialiasing;
 
-        DeferredAA DeferredAA;
+        public string DeferredAA;
 
-        ShaderQuality ShaderQuality;
+        public string ShaderQuality;
 
-        TexturesQuality TexturesQuality;
+        public string TexturesQuality;
 
-        TextureFiltering FilterAnisoQ;
+        public string FilterAnisoQ;
 
-        string ZClip;
+        public string ZClip;
 
-        string ZClipAuto;
+        public string ZClipAuto;
 
-        uint ZClipBlock;
+        public uint ZClipBlock;
 
-        GeometryQuality GeometryQuality;
+        public string GeometryQuality;
 
-        float GeomLodScaleZ;
+        public float GeomLodScaleZ;
 
-        string WaterReflect;
+        public string WaterReflect;
 
-        bool WaterGeomStadium;
+        public bool WaterGeomStadium;
 
-        string VehicleReflect;
+        public string VehicleReflect;
 
-        uint VehicleReflectMaxCount;
+        public uint VehicleReflectMaxCount;
 
         [JsonPropertyName("Decals_3D (TextureDecals)")]
-        bool Decals3D;
+        public bool Decals3D;
 
         [JsonPropertyName("Decals_2D (TextureDecals)")]
-        bool Decals2D;
+        public bool Decals2D;
 
-        BloomHdr FxBloomHdr;
+        public string FxBloomHdr;
 
-        OnOff FxMotionBlur;
+        public string FxMotionBlur;
 
-        float FxMotionBlurIntens;
+        public float FxMotionBlurIntens;
 
-        OnOff FxBlur;
+        public string FxBlur;
 
         [JsonPropertyName("LM SizeMax")]
-        string LightmapSizeMax;
+        public string LightmapSizeMax;
 
         [JsonPropertyName("LM Quality")]
-        string LightmapQuality;
+        public string LightmapQuality;
 
         [JsonPropertyName("LM QUltra")]
-        bool LightmapQUltra;
+        public bool LightmapQUltra;
 
         [JsonPropertyName("LM iLight")]
-        bool LightmapILight;
+        public bool LightmapILight;
 
-        string ScreenShotExt = "jpg";
+        public string ScreenShotExt = "jpg";
 
-        ShadowQuality Shadows;
+        public string Shadows;
 
-        GpuSync GpuSync0;
+        public string GpuSync0;
 
-        GpuSync GpuSync1;
+        public string GpuSync1;
 
-        GpuSync GpuSync2;
+        public string GpuSync2;
 
-        GpuSync GpuSync3;
+        public string GpuSync3;
 
-        uint GpuSyncTimeout;
+        public uint GpuSyncTimeout;
 
-        uint MaxFps;
+        public uint MaxFps;
 
-        bool EmulateCursorGDI;
+        public bool EmulateCursorGDI;
 
-        bool OptimPartDynaGeometry;
+        public bool OptimPartDynaGeometry;
 
-        bool DisableZBufferRange;
+        public bool DisableZBufferRange;
 
-        bool DisableWindowedAntiAlias;
+        public bool DisableWindowedAntiAlias;
 
-        bool EnableFullscreenGDI;
+        public bool EnableFullscreenGDI;
 
-        string LightFromMap;
+        public string LightFromMap;
 
-        bool EnableCheckLags;
+        public bool EnableCheckLags;
 
-        float AgpUseFactor;
+        public float AgpUseFactor;
 
-        float ParticleMaxGpuLoadMs;
+        public float ParticleMaxGpuLoadMs;
 
-        bool AsyncRender;
+        public bool AsyncRender;
 
-        bool MultiThread = true;
+        public bool MultiThread = true;
 
-        uint ThreadCountMax;
+        public uint ThreadCountMax;
 
-        bool AutomaticEnabled;
+        public bool AutomaticEnabled;
 
-        uint AutomaticMinFps;
-
-        public ISettings DefaultSettings()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ISettings SettingsFromJson(string json)
-        {
-            var parsedObject = JsonDocument.Parse(json);
-
-            var newSettings = new DisplaySettings();
-
-
-
-            return newSettings;
-        }
-
-        /// <summary>
-        /// Returns the json string representing this DisplaySettings object
-        /// </summary>
-        /// <returns></returns>
-        public string JsonExport()
-        {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Converters =
-                {
-                    new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
-                }
-            };
-
-            return JsonSerializer.Serialize(this, options);
-        }
+        public uint AutomaticMinFps;
     }
 }
