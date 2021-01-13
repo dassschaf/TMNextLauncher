@@ -22,9 +22,16 @@ namespace TMNextLauncher
     /// </summary>
     public sealed partial class SettingsPage : Page
     {
+        GameSettings.GameSettings settings;
+
         public SettingsPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            this.settings = (GameSettings.GameSettings)e.Parameter; 
         }
     }
 }
