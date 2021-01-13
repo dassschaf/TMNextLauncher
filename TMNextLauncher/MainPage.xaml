@@ -6,16 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="800" Height="458" ManipulationMode="None">
-
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
-        <Image x:Name="SplashImage" Source="/Assets/2-1.jpg" Margin="0,0,0,58"/>
-        <Grid Margin="10,405,10,9">
-            <Button x:Name="LaunchButton" Content="Launch" FontSize="24" FontWeight="Bold" Margin="0,0,640,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="LaunchButton_Click"/>
-            <Button x:Name="SettingsButton" Content="Settings" Width="140" FontSize="24" FontWeight="Bold" Margin="157,0,0,0" VerticalAlignment="Stretch"/>
-            <Button x:Name="ExitButton" Content="Exit" FontSize="24" FontWeight="Bold" Margin="640,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="ExitButton_Click"/>
-        </Grid>
-        <TextBlock x:Name="SplashText" Margin="10,10,479,352" Text="TMNextLauncher" TextWrapping="Wrap" FontWeight="Bold" FontSize="36"/>
+        <NavigationView Name="MainNavView" IsSettingsVisible="False" ItemInvoked="MainNavView_ItemInvoked" IsBackButtonVisible="Collapsed">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Play" Content="Launch"/>
+                <NavigationViewItem Icon="Setting" Content="Settings"/>
+                <NavigationViewItem Icon="Cancel" Content="Exit"/>
+            </NavigationView.MenuItems>
 
+
+            <Frame Name="ContentFrame"/>
+        </NavigationView>
     </Grid>
+
 </Page>

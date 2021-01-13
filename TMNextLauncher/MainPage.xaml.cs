@@ -34,14 +34,32 @@ namespace TMNextLauncher
             this.settings = GameSettings.GameSettings.SettingsFromJson(File.ReadAllText("ms-appx:///../Assets/testSettings.json"));
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        private void MainNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            Application.Current.Exit();
-        }
+            // get nav options right
+            FrameNavigationOptions navOptions = new FrameNavigationOptions();
+            navOptions.TransitionInfoOverride = args.RecommendedNavigationTransitionInfo;
 
-        private void LaunchButton_Click(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("uplay://launch/5595/0");
+            // launch item clicked
+            if (args.InvokedItem.ToString() == "Launch")
+            {
+                ContentFrame.Content = "launch";
+
+                // TODO: start TM2020
+            }
+
+            // settings item clicked
+            if (args.InvokedItem.ToString() == "Settings")
+            {
+                // navigate to settings page
+                ContentFrame.NavigateToType(typeof(SettingsPage), this.settings, navOptions);
+            }
+
+            // exit item clicked
+            if (args.InvokedItem.ToString() == "Exit")
+            {
+                Application.Current.Exit();
+            }
         }
     }
 }
