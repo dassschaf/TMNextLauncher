@@ -22,7 +22,7 @@ namespace GameSettings
 
         public string ScreenSizeWin;
 
-        public bool SteroByDefault;
+        public bool StereoByDefault;
 
         public bool StereoAdvanced;
 
