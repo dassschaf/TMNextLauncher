@@ -37,5 +37,14 @@ namespace TMNextLauncher
 
             textBlock.Text = settings.Display.ScreenSizeFS;
         }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            string json = File.ReadAllText("ms-appx://../Assets/testSettings.json");
+
+            GameSettings.GameSettings settings = GameSettings.GameSettings.SettingsFromJson(json);
+
+            textBlock.Text = settings.JsonExport();
+        }
     }
 }

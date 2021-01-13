@@ -11,6 +11,7 @@
     <Grid>
         <Button x:Name="button" Content="Button" Margin="10,10,0,0" VerticalAlignment="Top" Click="button_Click" />
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="15,48,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="244" Width="360"/>
+        <Button x:Name="button_Copy" Content="Button" Margin="93,10,0,0" VerticalAlignment="Top" Click="button_Copy_Click" />
 
 
     </Grid>
