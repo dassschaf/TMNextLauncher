@@ -24,27 +24,24 @@ namespace TMNextLauncher
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        GameSettings.GameSettings settings;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            this.settings = GameSettings.GameSettings.SettingsFromJson(File.ReadAllText("ms-appx:///../Assets/testSettings.json"));
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            string json = File.ReadAllText("ms-appx://../Assets/testSettings.json");
-
-            GameSettings.GameSettings settings = GameSettings.GameSettings.SettingsFromJson(json);
-
-            textBlock.Text = settings.Display.ScreenSizeFS;
+            Application.Current.Exit();
         }
 
-        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        private void LaunchButton_Click(object sender, RoutedEventArgs e)
         {
-            string json = File.ReadAllText("ms-appx://../Assets/testSettings.json");
-
-            GameSettings.GameSettings settings = GameSettings.GameSettings.SettingsFromJson(json);
-
-            textBlock.Text = settings.JsonExport();
+            System.Diagnostics.Process.Start("uplay://launch/5595/0");
         }
     }
 }
