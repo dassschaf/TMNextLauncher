@@ -10,13 +10,34 @@
     <Grid>
         <NavigationView Name="MainNavView" IsSettingsVisible="True" ItemInvoked="MainNavView_ItemInvoked" IsBackButtonVisible="Collapsed">
             <NavigationView.MenuItems>
-                <NavigationViewItem Name="ItemLaunch"  Icon="Play" Content="Launch"/>
-                <NavigationViewItem Name="ItemGameSettings" Icon="Edit" Content="Game Settings"/>
-                <NavigationViewItem Name="ItemExit" Icon="Cancel" Content="Exit"/>
+                <NavigationViewItem Name="ItemHome"  Icon="Home" Content="Home"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Name="ItemGraphics"  Icon="RotateCamera" Content="Graphics"/>
+                <NavigationViewItem Name="ItemNetwork"  Icon="Globe" Content="Network"/>
+                <NavigationViewItem Name="ItemDownloads"  Icon="Switch" Content="File Downloads"/>
+                <NavigationViewItem Name="ItemAudio"  Icon="Audio" Content="Audio"/>
             </NavigationView.MenuItems>
 
 
-            <Frame Name="ContentFrame"/>
+            <!-- Grid for Commandbar + Frame -->
+            <Grid>
+                <Frame x:Name="ContentFrame" Content="ContentFrame" Margin="0,40,0,0"/>
+                
+                <CommandBar x:Name="MainCommandBar" DefaultLabelPosition="Right" Height="40">
+                    <CommandBar.Content>
+                        <TextBlock Text="PageTitle" Name="ContentTitle" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8" FontSize="16"/>
+                    </CommandBar.Content>
+
+                    <AppBarButton Name="CommandButtonLoad"  Icon="OpenLocal" Label="Load" Click="CommandButtonLoad_Click"/>
+                    <AppBarButton Name="CommandButtonSave" Icon="SaveLocal" Label="Save" Click="CommandButtonSave_Click"/>
+
+                    <AppBarSeparator/>
+
+                    <AppBarButton Name="CommandButtonLaunch" Icon="Play" Label="Launch" Click="CommandButtonLaunch_Click"/>
+                    <AppBarButton Name="CommandButtonExit" Icon="Cancel" Label="Exit" Click="CommandButtonExit_Click"/>
+                </CommandBar>
+
+            </Grid>
         </NavigationView>
     </Grid>
 

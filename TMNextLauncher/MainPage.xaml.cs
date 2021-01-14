@@ -16,16 +16,21 @@ using Windows.UI.Xaml.Navigation;
 using GameSettings;
 using Windows.Storage;
 using TMNextLauncher.Pages;
+using Windows.UI.Popups;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
 namespace TMNextLauncher
 {
+    
+
     /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
+    /// Main page containing the main navigation and main content frame.
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        SettingsController settingsController;
 
         public MainPage()
         {
@@ -42,6 +47,8 @@ namespace TMNextLauncher
                 // navigate to settings
                 ContentFrame.NavigateToType(typeof(AppSettingsPage), null, navOptions);     
             }
+
+            this.settingsController = new SettingsController();
         }
 
         private void MainNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -50,30 +57,81 @@ namespace TMNextLauncher
             FrameNavigationOptions navOptions = new FrameNavigationOptions();
             navOptions.TransitionInfoOverride = args.RecommendedNavigationTransitionInfo;
 
-            // launch item clicked
-            if (args.InvokedItemContainer.Name == "ItemLaunch")
-            {
-                ContentFrame.Content = "launch";
-
-                // TODO: start TM2020
-            }
-
-            // settings item clicked
-            if (args.InvokedItemContainer.Name == "ItemGameSettings")
-            {
-                // navigate to settings page
-                ContentFrame.NavigateToType(typeof(SettingsPage), null, navOptions);
-            }
-
-            // exit item clicked
-            if (args.InvokedItemContainer.Name == "ItemExit")
-            {
-                Application.Current.Exit();
-            }
-
             if (args.IsSettingsInvoked)
             {
                 ContentFrame.NavigateToType(typeof(AppSettingsPage), null, navOptions);
+            }
+
+            if (args.InvokedItemContainer.Name == "ItemHome")
+            {
+
+            }
+
+            if (args.InvokedItemContainer.Name == "ItemNetwork")
+            {
+
+            }
+
+            if (args.InvokedItemContainer.Name == "ItemDownloads")
+            {
+            
+            }
+
+            if (args.InvokedItemContainer.Name == "ItemAudio")
+            {
+
+            }
+        }
+
+        private void CommandButtonExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
+
+        private async void CommandButtonLaunch_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+
+            if (localSettings.Values["GameExePath"] != null)
+            {
+
+            } 
+            else
+            {
+                MessageDialog dialog = new MessageDialog("You need to set the path to the game's executable file in order to start TrackMania from here.");
+                await dialog.ShowAsync();
+            }
+
+            // TODO: Launch TM
+        }
+
+        private async void CommandButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+
+            if (localSettings.Values["SettingsPath"] != null && this.settingsController != null)
+            {
+                this.settingsController.SaveGameSettings();
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("You need to set the path to the game's configuration file in your Documents folder to save settings.");
+                await dialog.ShowAsync();
+            }
+        }
+
+        private async void CommandButtonLoad_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+
+            if (localSettings.Values["SettingsPath"] != null)
+            {
+                this.settingsController.ReadGameSettings();
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("You need to set the path to the game's configuration file in your Documents folder to read settings.");
+                await dialog.ShowAsync();
             }
         }
     }
