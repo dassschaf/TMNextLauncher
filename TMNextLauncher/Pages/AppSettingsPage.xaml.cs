@@ -17,6 +17,7 @@ using TMNextLauncher;
 using Windows.Storage.Pickers;
 using Windows.Storage;
 using Windows.UI.Popups;
+using Windows.Storage.AccessCache;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
@@ -41,7 +42,7 @@ namespace TMNextLauncher.Pages
 
             // update displayed paths if the app had been opened before
             if (localSettings.Values["SettingsPath"] != null)
-                SettingsPathTextblock.Text = localSettings.Values["SettingsPath"] as string;
+                SettingsPathTextBlock.Text = localSettings.Values["SettingsPath"] as string;
          
             if (localSettings.Values["GameExePath"] != null)
                 GamePathTextblock.Text = localSettings.Values["GameExePath"] as string;
@@ -61,12 +62,14 @@ namespace TMNextLauncher.Pages
             {
                 string filePath = file.Path;
 
-                // save path
+                // save access token
                 ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
-                localSettings.Values["SettingsPath"] = filePath;
+
+                var token = StorageApplicationPermissions.FutureAccessList.Add(file);
+                localSettings.Values["SettingsPath"] = token;
 
                 // update UI
-                SettingsPathTextblock.Text = filePath;
+                SettingsPathTextBlock.Text = filePath;
             } 
             else
             {
@@ -91,7 +94,9 @@ namespace TMNextLauncher.Pages
 
                 // save path
                 ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
-                localSettings.Values["GameExePath"] = filePath;
+
+                var token = StorageApplicationPermissions.FutureAccessList.Add(file);
+                localSettings.Values["GameExePath"] = token;
 
                 // update UI
                 GamePathTextblock.Text = filePath;

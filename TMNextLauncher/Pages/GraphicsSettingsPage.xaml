@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="TMNextLauncher.Pages.GraphicsSettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TMNextLauncher.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock x:Name="DisplaymodeTextbox" HorizontalAlignment="Left" Margin="10,14,0,0" Text="Display mode" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox x:Name="DisplaymodeCombo" Margin="146,8,0,0" Width="186" PlaceholderText="...">
+            <x:String>Fullscreen</x:String>
+            <x:String>Windowed Fullscreen</x:String>
+            <x:String>Windowed</x:String>
+        </ComboBox>   
+    </Grid>
+</Page>

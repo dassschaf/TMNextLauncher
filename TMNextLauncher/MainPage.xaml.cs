@@ -36,19 +36,11 @@ namespace TMNextLauncher
         {
             this.InitializeComponent();
 
-            // check if the app is opened the first time
-            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
-
-            if ((localSettings.Values["SettingsPath"] == null) || (localSettings.Values["GameExePath"] == null))
-            {
-                // get nav options right
-                FrameNavigationOptions navOptions = new FrameNavigationOptions();
-                
-                // navigate to settings
-                ContentFrame.NavigateToType(typeof(AppSettingsPage), null, navOptions);     
-            }
-
             this.settingsController = new SettingsController();
+
+            // set home screen layout:
+            ContentFrame.Content = "";
+            ContentTitle.Text = "Home";
         }
 
         private void MainNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -59,27 +51,38 @@ namespace TMNextLauncher
 
             if (args.IsSettingsInvoked)
             {
+                ContentTitle.Text = "App settings";
                 ContentFrame.NavigateToType(typeof(AppSettingsPage), null, navOptions);
             }
 
             if (args.InvokedItemContainer.Name == "ItemHome")
             {
+                ContentFrame.Content = "";
+                ContentTitle.Text = "Home";
+            }
 
+            if (args.InvokedItemContainer.Name == "ItemGraphics")
+            {
+                ContentFrame.NavigateToType(typeof(GraphicsSettingsPage), this.settingsController, navOptions);
+                ContentTitle.Text = "Graphics settings";
             }
 
             if (args.InvokedItemContainer.Name == "ItemNetwork")
             {
-
+                ContentFrame.Content = "";
+                ContentTitle.Text = "Network settings";
             }
 
             if (args.InvokedItemContainer.Name == "ItemDownloads")
             {
-            
+                ContentFrame.Content = "";
+                ContentTitle.Text = "File transfer settings";
             }
 
             if (args.InvokedItemContainer.Name == "ItemAudio")
             {
-
+                ContentFrame.Content = "";
+                ContentTitle.Text = "Audio settings";
             }
         }
 
@@ -132,6 +135,20 @@ namespace TMNextLauncher
             {
                 MessageDialog dialog = new MessageDialog("You need to set the path to the game's configuration file in your Documents folder to read settings.");
                 await dialog.ShowAsync();
+            }
+        }
+
+        private async void MainNavView_Loaded(object sender, RoutedEventArgs e)
+        {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+
+            if ((localSettings.Values["SettingsPath"] == null) || (localSettings.Values["GameExePath"] == null))
+            {
+                MessageDialog dialog = new MessageDialog("You have to set a path to your settings file and your game executable in order to make use of this program's features. Open the settings panel at the bottom to do so.");
+                await dialog.ShowAsync();
+
+                ContentTitle.Text = "App settings";
+                ContentFrame.NavigateToType(typeof(AppSettingsPage), null, null);
             }
         }
     }

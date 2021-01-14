@@ -8,6 +8,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
 using Windows.UI.Popups;
+using Windows.Storage.AccessCache;
 
 namespace TMNextLauncher
 {
@@ -26,9 +27,11 @@ namespace TMNextLauncher
 
             if (localSettings.Values["SettingsPath"] != null)
             {
-                // get path and json ready
-                string path = (string)localSettings.Values["SettingsPath"];
-                string settingsJson = File.ReadAllText(path);
+                var accessToken = localSettings.Values["SettingsPath"] as string;
+
+                var file = await StorageApplicationPermissions.FutureAccessList.GetFileAsync(accessToken);
+
+                string settingsJson = await FileIO.ReadTextAsync(file);
 
                 // parse and store the object
                 settings = GameSettings.GameSettings.SettingsFromJson(settingsJson);
@@ -51,12 +54,11 @@ namespace TMNextLauncher
 
             if (localSettings.Values["SettingsPath"] != null && settings != null)
             {
-                // get path and json ready
-                string settingsJson = settings.JsonExport();
-                string path = (string)localSettings.Values["SettingsPath"];
+                var accessToken = localSettings.Values["SettingsPath"] as string;
 
-                // save
-                File.WriteAllText(path, settingsJson);
+                var file = await StorageApplicationPermissions.FutureAccessList.GetFileAsync(accessToken);
+
+                await FileIO.WriteTextAsync(file, this.settings.JsonExport());
 
                 // notify user
                 MessageDialog dialog = new MessageDialog("Successfully saved the settings.");

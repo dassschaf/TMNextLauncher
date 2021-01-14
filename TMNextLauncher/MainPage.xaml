@@ -6,15 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
     <Grid>
-        <NavigationView Name="MainNavView" IsSettingsVisible="True" ItemInvoked="MainNavView_ItemInvoked" IsBackButtonVisible="Collapsed">
+        <NavigationView Name="MainNavView" IsSettingsVisible="True" ItemInvoked="MainNavView_ItemInvoked" IsBackButtonVisible="Collapsed" Loaded="MainNavView_Loaded">
             <NavigationView.MenuItems>
                 <NavigationViewItem Name="ItemHome"  Icon="Home" Content="Home"/>
                 <NavigationViewItemSeparator/>
                 <NavigationViewItem Name="ItemGraphics"  Icon="RotateCamera" Content="Graphics"/>
                 <NavigationViewItem Name="ItemNetwork"  Icon="Globe" Content="Network"/>
-                <NavigationViewItem Name="ItemDownloads"  Icon="Switch" Content="File Downloads"/>
+                <NavigationViewItem Name="ItemDownloads"  Icon="Switch" Content="File transfer"/>
                 <NavigationViewItem Name="ItemAudio"  Icon="Audio" Content="Audio"/>
             </NavigationView.MenuItems>
 
