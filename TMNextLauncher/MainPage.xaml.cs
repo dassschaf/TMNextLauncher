@@ -27,13 +27,21 @@ namespace TMNextLauncher
     public sealed partial class MainPage : Page
     {
 
-        GameSettings.GameSettings settings;
-
         public MainPage()
         {
             this.InitializeComponent();
 
-            this.settings = GameSettings.GameSettings.SettingsFromJson(File.ReadAllText("ms-appx:///../Assets/testSettings.json"));
+            // check if the app is opened the first time
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+
+            if ((localSettings.Values["SettingsPath"] == null) || (localSettings.Values["GameExePath"] == null))
+            {
+                // get nav options right
+                FrameNavigationOptions navOptions = new FrameNavigationOptions();
+                
+                // navigate to settings
+                ContentFrame.NavigateToType(typeof(AppSettingsPage), null, navOptions);     
+            }
         }
 
         private void MainNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)

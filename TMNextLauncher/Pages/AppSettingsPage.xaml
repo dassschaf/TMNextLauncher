@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="TMNextLauncher.Pages.AppSettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TMNextLauncher.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock x:Name="SettingsPathTextblock" HorizontalAlignment="Left" Margin="10,10,0,0" Text="No settings file path set yet." TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Normal"/>
+        <Button x:Name="SettingsPathUpdateButton" Content="Update path" Margin="10,34,0,0" VerticalAlignment="Top" FontSize="14" Click="SettingsPathUpdateButton_Click"/>
+        <TextBlock x:Name="GamePathTextblock" HorizontalAlignment="Left" Margin="10,127,0,0" Text="No game executable file path set yet." TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Normal"/>
+        <Button x:Name="GamePathUpdateButton" Content="Update path" Margin="10,151,0,0" VerticalAlignment="Top" FontSize="14" Click="GamePathUpdateButton_Click"/>
+        
+        <!-- Debug button to reset paths to null
+        <Button x:Name="PathResetButton" Content="Reset Paths to null" Margin="10,188,0,0" VerticalAlignment="Top" FontSize="14" Click="PathResetButton_Click"/> -->
+
+    </Grid>
+</Page>
