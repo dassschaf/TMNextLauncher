@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 using GameSettings;
+using Windows.Storage;
+using TMNextLauncher.Pages;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -41,7 +43,7 @@ namespace TMNextLauncher
             navOptions.TransitionInfoOverride = args.RecommendedNavigationTransitionInfo;
 
             // launch item clicked
-            if (args.InvokedItem.ToString() == "Launch")
+            if (args.InvokedItemContainer.Name == "ItemLaunch")
             {
                 ContentFrame.Content = "launch";
 
@@ -49,16 +51,21 @@ namespace TMNextLauncher
             }
 
             // settings item clicked
-            if (args.InvokedItem.ToString() == "Settings")
+            if (args.InvokedItemContainer.Name == "ItemGameSettings")
             {
                 // navigate to settings page
-                ContentFrame.NavigateToType(typeof(SettingsPage), this.settings, navOptions);
+                ContentFrame.NavigateToType(typeof(SettingsPage), null, navOptions);
             }
 
             // exit item clicked
-            if (args.InvokedItem.ToString() == "Exit")
+            if (args.InvokedItemContainer.Name == "ItemExit")
             {
                 Application.Current.Exit();
+            }
+
+            if (args.IsSettingsInvoked)
+            {
+                ContentFrame.NavigateToType(typeof(AppSettingsPage), null, navOptions);
             }
         }
     }

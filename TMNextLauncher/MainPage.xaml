@@ -8,11 +8,11 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
-        <NavigationView Name="MainNavView" IsSettingsVisible="False" ItemInvoked="MainNavView_ItemInvoked" IsBackButtonVisible="Collapsed">
+        <NavigationView Name="MainNavView" IsSettingsVisible="True" ItemInvoked="MainNavView_ItemInvoked" IsBackButtonVisible="Collapsed">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Play" Content="Launch"/>
-                <NavigationViewItem Icon="Setting" Content="Settings"/>
-                <NavigationViewItem Icon="Cancel" Content="Exit"/>
+                <NavigationViewItem Name="ItemLaunch"  Icon="Play" Content="Launch"/>
+                <NavigationViewItem Name="ItemGameSettings" Icon="Edit" Content="Game Settings"/>
+                <NavigationViewItem Name="ItemExit" Icon="Cancel" Content="Exit"/>
             </NavigationView.MenuItems>
 
 
