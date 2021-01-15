@@ -116,11 +116,11 @@ namespace GameSettings
 
         public string TmCarQuality;
 
-        public string TmCarParticleQuality;
+        public string TmCarParticlesQuality;
 
         public string PlayerShadow;
 
-        public string PlayerOccolusion;
+        public string PlayerOcclusion;
 
         public string TmOpponents;
 
@@ -152,15 +152,15 @@ namespace GameSettings
 
         public bool InputsCaptureKeyboard;
 
-        public bool InputFreezeUnusedAxes;
+        public bool InputsFreezeUnusedAxes;
 
-        public bool InputEnableRumble;
+        public bool InputsEnableRumble;
 
-        public string Advertisement_Enabled;
+        public string Advertising_Enabled;
 
-        public float Advertisement_TunningCoef;
+        public float Advertising_TunningCoef;
 
-        public bool Advertisement_DisabledByUser;
+        public bool Advertising_DisabledByUser;
 
         public bool EnableCrashLogUpload;
 
@@ -179,7 +179,7 @@ namespace GameSettings
 
         public string JsonExport()
         {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions { IncludeFields = true });
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions { IncludeFields = true, WriteIndented = true,  });
         }
     }
 }

@@ -50,7 +50,7 @@ namespace GameSettings
 
         public string ZClipAuto;
 
-        public uint ZClipBlock;
+        public uint ZClipNbBlock;
 
         public string GeometryQuality;
 
@@ -102,17 +102,19 @@ namespace GameSettings
 
         public string GpuSync3;
 
-        public uint GpuSyncTimeout;
+        public uint GpuSyncTimeOut;
 
         public uint MaxFps;
 
         public bool EmulateCursorGDI;
 
-        public bool OptimPartDynaGeometry;
+        public bool OptimPartDynaGeom;
 
         public bool DisableZBufferRange;
 
         public bool DisableWindowedAntiAlias;
+
+        public bool DisableHdrCubeRenderMipMap;
 
         public bool EnableFullscreenGDI;
 
@@ -130,8 +132,8 @@ namespace GameSettings
 
         public uint ThreadCountMax;
 
-        public bool AutomaticEnabled;
+        public bool Automatic_Enabled;
 
-        public uint AutomaticMinFps;
+        public uint Automatic_MinFps;
     }
 }

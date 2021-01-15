@@ -118,7 +118,14 @@
     enum TmCarQuality {
         high_medium_opponents,
         all_high,
+        all_medium,
         all_low
+    }
+
+    enum TmCarParticlesQuality
+    {
+        all_high,
+        all_medium
     }
 
     enum GpuSync 
