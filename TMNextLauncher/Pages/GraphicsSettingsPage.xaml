@@ -10,7 +10,7 @@
 
     <Grid>
         <TextBlock x:Name="DisplaymodeTextbox" HorizontalAlignment="Left" Margin="10,14,0,0" Text="Display mode" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox x:Name="DisplaymodeCombo" Margin="146,8,0,0" Width="186" PlaceholderText="...">
+        <ComboBox x:Name="DisplaymodeCombo" Margin="146,8,0,0" Width="186" PlaceholderText="..." SelectionChanged="DisplaymodeCombo_SelectionChanged">
             <x:String>Fullscreen</x:String>
             <x:String>Windowed Fullscreen</x:String>
             <x:String>Windowed</x:String>

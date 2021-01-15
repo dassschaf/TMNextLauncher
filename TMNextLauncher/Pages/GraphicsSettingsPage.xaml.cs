@@ -34,6 +34,40 @@ namespace TMNextLauncher.Pages
             base.OnNavigatedTo(e);
 
             this.settingsController = e.Parameter as SettingsController;
+
+            // make UI show the current settings
+            settingsToUi();
+        }
+
+        void settingsToUi()
+        {
+            // Display mode:
+            switch (settingsController.settings.Display.DisplayMode) {
+                case "fullscreen":
+                    DisplaymodeCombo.SelectedItem = "Fullscreen";
+                    break;
+
+                case "windowedfull":
+                    DisplaymodeCombo.SelectedItem = "Windowed Fullscreen";
+                    break;
+
+                case "windowed":
+                    DisplaymodeCombo.SelectedItem = "Windowed";
+                    break;
+            }
+
+
+        }
+
+        private void DisplaymodeCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems[0].ToString() == "Fullscreen")
+                settingsController.settings.Display.DisplayMode = "fullscreen";
+            if (e.AddedItems[0].ToString() == "Windowed Fullscreen")
+                settingsController.settings.Display.DisplayMode = "windowedfull";
+            if (e.AddedItems[0].ToString() == "Windowed")
+                settingsController.settings.Display.DisplayMode = "windowed";
+
         }
     }
 }
