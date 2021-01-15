@@ -9,11 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock x:Name="DisplaymodeTextbox" HorizontalAlignment="Left" Margin="10,14,0,0" Text="Display mode" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox x:Name="DisplaymodeCombo" Margin="146,8,0,0" Width="186" PlaceholderText="..." SelectionChanged="DisplaymodeCombo_SelectionChanged">
+        <ComboBox Header="Display mode" x:Name="DisplaymodeCombo" Margin="10,10,0,0" Width="186" PlaceholderText="..." SelectionChanged="DisplaymodeCombo_SelectionChanged">
             <x:String>Fullscreen</x:String>
             <x:String>Windowed Fullscreen</x:String>
             <x:String>Windowed</x:String>
-        </ComboBox>   
+        </ComboBox>
+        <TextBox Header="Refresh rate" x:Name="RefreshrateTextbox" HorizontalAlignment="Left" Margin="10,70,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="186" InputScope="Number"/>
+        <ToggleSwitch x:Name="CustomizeSwitch" Header="Use custom settings?" Margin="10,130,0,0" VerticalAlignment="Top" OffContent="No" OnContent="Yes"/>
     </Grid>
 </Page>

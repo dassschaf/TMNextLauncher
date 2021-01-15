@@ -93,7 +93,11 @@
     enum AntialiasingQuality
     {
         none,
-        _4_samples
+        _4_samples,
+        _2_samples,
+        _8_samples,
+        _6_samples,
+        _16_samples
     }
 
     enum WaterReflectQuality {
