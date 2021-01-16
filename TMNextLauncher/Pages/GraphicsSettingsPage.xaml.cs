@@ -57,15 +57,42 @@ namespace TMNextLauncher.Pages
 
             // Customize:
             CustomizeSwitch.IsOn = settingsController.settings.Display.Customize;
+
+            // Antialiasing:
+            switch (settingsController.settings.Display.Antialiasing)
+            {
+                case "none":
+
+                case "_2_samples":
+
+
+
+                case "_4_samples":
+
+
+
+                case "_6_samples":
+
+
+
+                case "_8_samples":
+
+
+                case "16_samples":
+
+                    break;
+            }
         }
 
         private void DisplaymodeCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.AddedItems[0].ToString() == "Fullscreen")
+            var selected = e.AddedItems[0].ToString();
+
+            if (selected == "Fullscreen")
                 settingsController.settings.Display.DisplayMode = "fullscreen";
-            if (e.AddedItems[0].ToString() == "Windowed Fullscreen")
+            if (selected == "Windowed Fullscreen")
                 settingsController.settings.Display.DisplayMode = "windowedfull";
-            if (e.AddedItems[0].ToString() == "Windowed")
+            if (selected == "Windowed")
                 settingsController.settings.Display.DisplayMode = "windowed";
         }
 
@@ -104,6 +131,30 @@ namespace TMNextLauncher.Pages
                     settingsController.settings.Display.Customize = false;
                 }
             }
+        }
+
+        private void AntialiasingCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = e.AddedItems[0].ToString();
+
+            if (selected == "off")
+                settingsController.settings.Display.Antialiasing = "none";
+
+            if (selected == "MSAA x2")
+                settingsController.settings.Display.Antialiasing = "_2_samples";
+
+            if (selected == "MSAA x4")
+                settingsController.settings.Display.Antialiasing = "_4_samples";
+
+            if (selected == "MSAA x6")
+                settingsController.settings.Display.Antialiasing = "_6_samples";
+
+            if (selected == "MSAA x8")
+                settingsController.settings.Display.Antialiasing = "_8_samples";
+
+            if (selected == "MSAA x16")
+                settingsController.settings.Display.Antialiasing = "_16_samples";
+
         }
     }
 }

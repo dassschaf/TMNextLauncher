@@ -16,7 +16,7 @@
         </ComboBox>
         <TextBox Header="Refresh rate" x:Name="RefreshrateTextbox" HorizontalAlignment="Left" Margin="10,70,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="186" InputScope="Number" TextChanged="RefreshrateTextbox_TextChanged"/>
         <ToggleSwitch x:Name="CustomizeSwitch" Header="Use custom settings?" Margin="10,130,0,0" VerticalAlignment="Top" OffContent="No" OnContent="Yes" Toggled="CustomizeSwitch_Toggled"/>
-        <ComboBox x:Name="AntialiasingCombo" Header="Antialiasing"  Margin="10,190,0,0" Width="186">
+        <ComboBox x:Name="AntialiasingCombo" Header="Antialiasing"  Margin="10,190,0,0" Width="186" SelectionChanged="AntialiasingCombo_SelectionChanged">
             <x:String>off</x:String>
             <x:String>MSAA x2</x:String>
             <x:String>MSAA x4</x:String>
