@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -41,6 +42,10 @@ namespace TMNextLauncher.Pages
 
         void settingsToUi()
         {
+            // if it's borked don't read settings to the UI
+            if (this.settingsController == null) { return; }
+
+
             // Display mode:
             switch (settingsController.settings.Display.DisplayMode) {
                 case "fullscreen":
@@ -56,7 +61,11 @@ namespace TMNextLauncher.Pages
                     break;
             }
 
+            // Refresh rate:
+            RefreshrateTextbox.Text = settingsController.settings.Display.RefreshRate.ToString();
 
+            // Customize:
+            CustomizeSwitch.IsOn = settingsController.settings.Display.Customize;
         }
 
         private void DisplaymodeCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -67,7 +76,43 @@ namespace TMNextLauncher.Pages
                 settingsController.settings.Display.DisplayMode = "windowedfull";
             if (e.AddedItems[0].ToString() == "Windowed")
                 settingsController.settings.Display.DisplayMode = "windowed";
+        }
 
+        private async void RefreshrateTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var tb = sender as TextBox;
+            uint rate;
+
+            if (uint.TryParse(tb.Text, out rate))
+            {
+                // if it's integer-y
+                settingsController.settings.Display.RefreshRate = rate;
+            }
+            else
+            {
+                tb.Text = settingsController.settings.Display.RefreshRate.ToString();
+
+                MessageDialog d = new MessageDialog("You must enter an integer number for your refresh rate.");
+                await d.ShowAsync();
+            }
+        }
+
+        private void CustomizeSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            var sw = sender as ToggleSwitch;
+
+            if (sw != null)
+            {
+                if (sw.IsOn)
+                {
+                    settingsController.settings.Display.Customize = true;
+                }
+                
+                else
+                {
+                    settingsController.settings.Display.Customize = false;
+                }
+            }
         }
     }
 }
