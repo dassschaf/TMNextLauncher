@@ -62,24 +62,65 @@ namespace TMNextLauncher.Pages
             switch (settingsController.settings.Display.Antialiasing)
             {
                 case "none":
+                    AntialiasingCombo.SelectedItem = "off";
+                    break;
 
                 case "_2_samples":
-
-
+                    AntialiasingCombo.SelectedItem = "MSAA 2x";
+                    break;
 
                 case "_4_samples":
-
+                    AntialiasingCombo.SelectedItem = "MSAA 4x";
+                    break;
 
 
                 case "_6_samples":
-
+                    AntialiasingCombo.SelectedItem = "MSAA 6x";
+                    break;
 
 
                 case "_8_samples":
-
+                    AntialiasingCombo.SelectedItem = "MSAA 8x";
+                    break;
 
                 case "16_samples":
+                    AntialiasingCombo.SelectedItem = "MSAA 16x";
+                    break;
+            }
 
+            // Deferred AA:
+            switch (settingsController.settings.Display.DeferredAA)
+            {
+                case "none":
+                    DeferredAntialiasingCombo.SelectedItem = "off";
+                    break;
+
+                case "_taa":
+                    DeferredAntialiasingCombo.SelectedItem = "TAA";
+                    break;
+
+                case "_fxaa":
+                    DeferredAntialiasingCombo.SelectedItem = "FXAA";
+                    break;
+            }
+
+            // Shader Quality:
+            switch (settingsController.settings.Display.ShaderQuality)
+            {
+                case "very_fast":
+                    ShaderCombo.SelectedItem = "Very fast";
+                    break;
+
+                case "fast":
+                    ShaderCombo.SelectedItem = "Fast";
+                    break;
+
+                case "nice":
+                    ShaderCombo.SelectedItem = "Nice";
+                    break;
+
+                case "very_nice":
+                    ShaderCombo.SelectedItem = "Very nice";
                     break;
             }
         }
@@ -155,6 +196,37 @@ namespace TMNextLauncher.Pages
             if (selected == "MSAA x16")
                 settingsController.settings.Display.Antialiasing = "_16_samples";
 
+        }
+
+        private void DeferredAntialiasingCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItem = e.AddedItems[0].ToString();
+
+            if (selectedItem == "off")
+                settingsController.settings.Display.DeferredAA = "none";
+
+            if (selectedItem == "TAA")
+                settingsController.settings.Display.DeferredAA = "_taa";
+
+            if (selectedItem == "FXAA")
+                settingsController.settings.Display.DeferredAA = "_fxaa";
+        }
+
+        private void ShaderCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = e.AddedItems[0].ToString();
+
+            if (selected == "Very fast")
+                settingsController.settings.Display.ShaderQuality = "very_fast";
+
+            if (selected == "Fast")
+                settingsController.settings.Display.ShaderQuality = "fast";
+
+            if (selected == "Nice")
+                settingsController.settings.Display.ShaderQuality = "nice";
+
+            if (selected == "Very nice")
+                settingsController.settings.Display.ShaderQuality = "very_nice";
         }
     }
 }

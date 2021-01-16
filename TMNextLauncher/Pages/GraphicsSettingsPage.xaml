@@ -24,12 +24,12 @@
             <x:String>MSAA x8</x:String>
             <x:String>MSAA x16</x:String>
         </ComboBox>
-        <ComboBox Header="Deferred Antialiasing" x:Name="DeferredAntialiasingCombo" Margin="10,250,0,0" Width="186">
+        <ComboBox Header="Deferred Antialiasing" x:Name="DeferredAntialiasingCombo" Margin="10,250,0,0" Width="186" SelectionChanged="DeferredAntialiasingCombo_SelectionChanged">
             <x:String>off</x:String>
             <x:String>FXAA</x:String>
             <x:String>TAA</x:String>
         </ComboBox>
-        <ComboBox Header="Shader quality" x:Name="ShaderCombo" Margin="10,310,0,0" Width="186">
+        <ComboBox Header="Shader quality" x:Name="ShaderCombo" Margin="10,310,0,0" Width="186" SelectionChanged="ShaderCombo_SelectionChanged">
             <x:String>Very fast</x:String>
             <x:String>Fast</x:String>
             <x:String>Nice</x:String>
