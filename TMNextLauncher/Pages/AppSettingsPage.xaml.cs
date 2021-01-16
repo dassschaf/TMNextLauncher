@@ -1,23 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.Storage.AccessCache;
+using Windows.Storage.Pickers;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-using TMNextLauncher;
-using Windows.Storage.Pickers;
-using Windows.Storage;
-using Windows.UI.Popups;
-using Windows.Storage.AccessCache;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
@@ -43,7 +30,7 @@ namespace TMNextLauncher.Pages
             // update displayed paths if the app had been opened before
             if (localSettings.Values["SettingsPath"] != null)
                 SettingsPathTextBlock.Text = localSettings.Values["SettingsPath"] as string;
-         
+
             if (localSettings.Values["GameExePath"] != null)
                 GamePathTextblock.Text = localSettings.Values["GameExePath"] as string;
         }
@@ -70,7 +57,7 @@ namespace TMNextLauncher.Pages
 
                 // update UI
                 SettingsPathTextBlock.Text = filePath;
-            } 
+            }
             else
             {
                 MessageDialog dialog = new MessageDialog("An error has occoured when trying to open the file. Maybe tell dassschaf to fix this shit.", "Error.");

@@ -17,7 +17,7 @@
         nice,
         very_nice
     }
-    
+
     enum TexturesQuality
     {
         very_low,
@@ -53,14 +53,14 @@
         off
     }
 
-    enum BloomHdr 
+    enum BloomHdr
     {
         medium,
         none,
         high
     }
 
-    enum DeferredAA 
+    enum DeferredAA
     {
         none,
         _txaa,
@@ -76,7 +76,7 @@
         bilinear
     }
 
-    enum Presets 
+    enum Presets
     {
         very_fast,
         fast,
@@ -100,26 +100,31 @@
         _16_samples
     }
 
-    enum WaterReflectQuality {
+    enum WaterReflectQuality
+    {
         low,
         medium
     }
 
-    enum PlayerShadowOccolusion {
+    enum PlayerShadowOccolusion
+    {
         me,
         all
     }
 
-    enum TmOpponents {
+    enum TmOpponents
+    {
         hide_too_close
     }
 
-    enum TmBackgroundQuality {
+    enum TmBackgroundQuality
+    {
         high,
         low
     }
 
-    enum TmCarQuality {
+    enum TmCarQuality
+    {
         high_medium_opponents,
         all_high,
         all_medium,
@@ -132,7 +137,7 @@
         all_medium
     }
 
-    enum GpuSync 
+    enum GpuSync
     {/* causes errors, but are still allowed values:
 
         none,
