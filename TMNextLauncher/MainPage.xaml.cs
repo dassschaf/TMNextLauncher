@@ -27,7 +27,6 @@ namespace TMNextLauncher
             this.settingsController = new SettingsController();
 
             // set home screen layout:
-            ContentFrame.Content = "";
             ContentTitle.Text = "Home";
         }
 
@@ -45,7 +44,7 @@ namespace TMNextLauncher
 
             if (args.InvokedItemContainer.Name == "ItemHome")
             {
-                ContentFrame.Content = "";
+                ContentFrame.NavigateToType(typeof(BlankPage), null, navOptions);
                 ContentTitle.Text = "Home";
             }
 
@@ -57,19 +56,19 @@ namespace TMNextLauncher
 
             if (args.InvokedItemContainer.Name == "ItemNetwork")
             {
-                ContentFrame.Content = "";
+                ContentFrame.NavigateToType(typeof(BlankPage), null, navOptions);
                 ContentTitle.Text = "Network settings";
             }
 
             if (args.InvokedItemContainer.Name == "ItemDownloads")
             {
-                ContentFrame.Content = "";
+                ContentFrame.NavigateToType(typeof(BlankPage), null, navOptions);
                 ContentTitle.Text = "File transfer settings";
             }
 
             if (args.InvokedItemContainer.Name == "ItemAudio")
             {
-                ContentFrame.Content = "";
+                ContentFrame.NavigateToType(typeof(BlankPage), null, navOptions);
                 ContentTitle.Text = "Audio settings";
             }
         }
