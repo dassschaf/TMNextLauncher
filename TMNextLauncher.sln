@@ -11,6 +11,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameSettings", "GameSettings\GameSettings.csproj", "{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMNextLauncherWpf", "TMNextLauncherWpf\TMNextLauncherWpf.csproj", "{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D} = {C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

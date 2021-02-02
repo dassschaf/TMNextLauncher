@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using TMNextLauncherWpf.Pages;
+
 namespace TMNextLauncherWpf
 {
     /// <summary>
@@ -23,6 +25,22 @@ namespace TMNextLauncherWpf
         public MainWindow()
         {
             InitializeComponent();
+
+            // check if paths are set
+            if (Properties.Settings.Default.GameExePath == "" || Properties.Settings.Default.SettingsJsonPath == "")
+                ContentFrame.Navigate(new AppSettingsPage());
+        }
+
+        private void AppSettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            // navigate to app settings button
+            ContentFrame.Navigate(new AppSettingsPage());
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            // shut down app
+            App.Current.Shutdown();
         }
     }
 }
