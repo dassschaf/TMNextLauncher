@@ -6,49 +6,53 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1000" Width="315">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1000" Width="458">
 
     <Grid>
         <ComboBox Header="Display mode" x:Name="DisplaymodeCombo" Margin="10,10,0,0" Width="186" PlaceholderText="..." SelectionChanged="DisplaymodeCombo_SelectionChanged">
-            <x:String>Fullscreen</x:String>
-            <x:String>Windowed Fullscreen</x:String>
-            <x:String>Windowed</x:String>
+            <ComboBoxItem>Fullscreen</ComboBoxItem>
+            <ComboBoxItem>Windowed Fullscreen</ComboBoxItem>
+            <ComboBoxItem>Windowed</ComboBoxItem>
         </ComboBox>
-        <TextBox Header="Refresh rate" x:Name="RefreshrateTextbox" HorizontalAlignment="Left" Margin="10,70,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="186" InputScope="Number" TextChanged="RefreshrateTextbox_TextChanged"/>
+        <TextBox Header="Max. framerate" x:Name="MaxRefreshrateTextbox" HorizontalAlignment="Left" Margin="10,70,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="186" InputScope="Number" TextChanged="MaxRefreshrateTextbox_TextChanged"/>
         <ToggleSwitch x:Name="CustomizeSwitch" Header="Use custom settings?" Margin="10,130,0,0" VerticalAlignment="Top" OffContent="No" OnContent="Yes" Toggled="CustomizeSwitch_Toggled"/>
         <ComboBox x:Name="AntialiasingCombo" Header="Antialiasing"  Margin="10,190,0,0" Width="186" SelectionChanged="AntialiasingCombo_SelectionChanged">
-            <x:String>off</x:String>
-            <x:String>MSAA x2</x:String>
-            <x:String>MSAA x4</x:String>
-            <x:String>MSAA x6</x:String>
-            <x:String>MSAA x8</x:String>
-            <x:String>MSAA x16</x:String>
+            <ComboBoxItem>off</ComboBoxItem>
+            <ComboBoxItem>MSAA x2</ComboBoxItem>
+            <ComboBoxItem>MSAA x4</ComboBoxItem>
+            <ComboBoxItem>MSAA x6</ComboBoxItem>
+            <ComboBoxItem>MSAA x8</ComboBoxItem>
+            <ComboBoxItem>MSAA x16</ComboBoxItem>
         </ComboBox>
         <ComboBox Header="Deferred Antialiasing" x:Name="DeferredAntialiasingCombo" Margin="10,250,0,0" Width="186" SelectionChanged="DeferredAntialiasingCombo_SelectionChanged">
-            <x:String>off</x:String>
-            <x:String>FXAA</x:String>
-            <x:String>TAA</x:String>
+            <ComboBoxItem>off</ComboBoxItem>
+            <ComboBoxItem>FXAA</ComboBoxItem>
+            <ComboBoxItem>TAA</ComboBoxItem>
         </ComboBox>
         <ComboBox Header="Shader quality" x:Name="ShaderCombo" Margin="10,310,0,0" Width="186" SelectionChanged="ShaderCombo_SelectionChanged">
-            <x:String>Very fast</x:String>
-            <x:String>Fast</x:String>
-            <x:String>Nice</x:String>
-            <x:String>Very nice</x:String>
+            <ComboBoxItem>Very fast</ComboBoxItem>
+            <ComboBoxItem>Fast</ComboBoxItem>
+            <ComboBoxItem>Nice</ComboBoxItem>
+            <ComboBoxItem>Very nice</ComboBoxItem>
         </ComboBox>
-        <ComboBox Header="Textures quality" x:Name="TextureQCombo" Margin="10,370,0,0" Width="186">
-            <x:String>Low</x:String>
-            <x:String>Medium</x:String>
-            <x:String>High</x:String>
-            <x:String>Very High</x:String>
+        <ComboBox Header="Textures quality" x:Name="TextureQCombo" Margin="10,370,0,0" Width="186" SelectionChanged="TextureQCombo_SelectionChanged">
+            <ComboBoxItem>Very low</ComboBoxItem>
+            <ComboBoxItem>Low</ComboBoxItem>
+            <ComboBoxItem>Medium</ComboBoxItem>
+            <ComboBoxItem>High</ComboBoxItem>
         </ComboBox>
-        <ComboBox Header="Texture filtering" x:Name="TextureFilterCombo" Margin="10,430,0,0" Width="186">
-            <x:String>Bilinear</x:String>
-            <x:String>Trilinear</x:String>
-            <x:String>Anisotropic x4</x:String>
-            <x:String>Anisotropic x8</x:String>
-            <x:String>Anisotropic x16</x:String>
-            
-                  
-              </ComboBox>
+        <ComboBox Header="Texture filtering" x:Name="TextureFilterCombo" Margin="201,370,0,0" Width="186" SelectionChanged="TextureFilterCombo_SelectionChanged">
+            <ComboBoxItem>Bilinear</ComboBoxItem>
+            <ComboBoxItem>Trilinear</ComboBoxItem>
+            <ComboBoxItem>Anisotropic x4</ComboBoxItem>
+            <ComboBoxItem>Anisotropic x8</ComboBoxItem>
+            <ComboBoxItem>Anisotropic x16</ComboBoxItem>
+
+
+        </ComboBox>
+        
+        
+        <!-- Debug info only -->
+        <TextBlock x:Name="DebugTextblock" HorizontalAlignment="Left" Margin="201,10,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="322" Width="254"/>
     </Grid>
 </Page>

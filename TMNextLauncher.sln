@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMNextLauncher", "TMNextLau
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameSettings", "GameSettings\GameSettings.csproj", "{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMNextLauncherWpf", "TMNextLauncherWpf\TMNextLauncherWpf.csproj", "{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,26 @@ Global
 		{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}.Release|x64.Build.0 = Release|Any CPU
 		{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}.Release|x86.ActiveCfg = Release|Any CPU
 		{C4C3F7AA-89F1-42E0-ACA1-213CAF69157D}.Release|x86.Build.0 = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|ARM.Build.0 = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|x64.Build.0 = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Debug|x86.Build.0 = Debug|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|ARM.Build.0 = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|ARM64.Build.0 = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|x64.ActiveCfg = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|x64.Build.0 = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|x86.ActiveCfg = Release|Any CPU
+		{D9ED7BB2-0EBE-4018-8D21-281C89FC2ACB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

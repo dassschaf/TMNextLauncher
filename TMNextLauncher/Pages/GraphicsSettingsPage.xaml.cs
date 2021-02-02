@@ -53,7 +53,7 @@ namespace TMNextLauncher.Pages
             }
 
             // Refresh rate:
-            RefreshrateTextbox.Text = settingsController.settings.Display.RefreshRate.ToString();
+            MaxRefreshrateTextbox.Text = settingsController.settings.Display.RefreshRate.ToString();
 
             // Customize:
             CustomizeSwitch.IsOn = settingsController.settings.Display.Customize;
@@ -137,25 +137,6 @@ namespace TMNextLauncher.Pages
                 settingsController.settings.Display.DisplayMode = "windowed";
         }
 
-        private async void RefreshrateTextbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var tb = sender as TextBox;
-            uint rate;
-
-            if (uint.TryParse(tb.Text, out rate))
-            {
-                // if it's integer-y
-                settingsController.settings.Display.RefreshRate = rate;
-            }
-            else
-            {
-                tb.Text = settingsController.settings.Display.RefreshRate.ToString();
-
-                MessageDialog d = new MessageDialog("You must enter an integer number for your refresh rate.");
-                await d.ShowAsync();
-            }
-        }
-
         private void CustomizeSwitch_Toggled(object sender, RoutedEventArgs e)
         {
             var sw = sender as ToggleSwitch;
@@ -227,6 +208,21 @@ namespace TMNextLauncher.Pages
 
             if (selected == "Very nice")
                 settingsController.settings.Display.ShaderQuality = "very_nice";
+        }
+
+        private void TextureQCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TextureFilterCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MaxRefreshrateTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

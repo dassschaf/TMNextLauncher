@@ -9,8 +9,8 @@
 
   <Identity
     Name="27f280aa-6dcb-4cef-8170-4d0f564aaeb5"
-    Publisher="CN=thoma"
-    Version="0.0.1.0" />
+    Publisher="CN=dassschaf"
+    Version="0.0.3.0" />
 
   <mp:PhoneIdentity PhoneProductId="27f280aa-6dcb-4cef-8170-4d0f564aaeb5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
