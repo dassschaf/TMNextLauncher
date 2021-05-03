@@ -11,12 +11,12 @@
         <Frame x:Name="ContentFrame" Content="" Margin="120,0,0,0" NavigationUIVisibility="Hidden"/>
         
         <!-- top section -->
-        <Button x:Name="LaunchButton" Content="Launch" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="LoadSetingsButton" Content="Load Settings" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="SaveSettingsButton" Content="Save Settings" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="GraphicsSettingsButton" Content="Graphics" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="AudioSettingsButton" Content="Audio" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="NetworkSettingsButton" Content="Network" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="LaunchButton" Content="Launch" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="LaunchButton_Click"/>
+        <Button x:Name="LoadSetingsButton" Content="Load Settings" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="100" Click="LoadSetingsButton_Click"/>
+        <Button x:Name="SaveSettingsButton" Content="Save Settings" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="100" Click="SaveSettingsButton_Click"/>
+        <Button x:Name="GraphicsSettingsButton" Content="Graphics" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="100" Click="GraphicsSettingsButton_Click"/>
+        <Button x:Name="AudioSettingsButton" Content="Audio" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="100" Click="AudioSettingsButton_Click"/>
+        <Button x:Name="NetworkSettingsButton" Content="Network" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="100" Click="NetworkSettingsButton_Click"/>
         
         <!-- bottom section -->
         <Button x:Name="AppSettingsButton" Content="Launcher Settings" HorizontalAlignment="Left" Margin="10,379,0,0" VerticalAlignment="Top" Width="100" Click="AppSettingsButton_Click"/>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,9 @@ namespace TMNextLauncherWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        SettingsController settings;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +33,8 @@ namespace TMNextLauncherWpf
             // check if paths are set
             if (Properties.Settings.Default.GameExePath == "" || Properties.Settings.Default.SettingsJsonPath == "")
                 ContentFrame.Navigate(new AppSettingsPage());
+
+            this.settings = new SettingsController();
         }
 
         private void AppSettingsButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +47,39 @@ namespace TMNextLauncherWpf
         {
             // shut down app
             App.Current.Shutdown();
+        }
+
+        private void LaunchButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GraphicsSettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new GraphicsSettingsPage());
+        }
+
+        private void AudioSettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NetworkSettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoadSetingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            settings.ReadSettingsFromFile();
+
+            // if path is set, settings will load.
+            // Debug.WriteLine("Settings loaded: " + settings.settings.JsonExport());
+        }
+
+        private void SaveSettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            settings.SaveSettingsToFile();
         }
     }
 }
