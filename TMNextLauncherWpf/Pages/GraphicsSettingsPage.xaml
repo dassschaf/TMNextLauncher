@@ -1,0 +1,94 @@
+﻿<Page x:Class="TMNextLauncherWpf.Pages.GraphicsSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TMNextLauncherWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GraphicsSettingsPage">
+
+    <Grid>
+        <ComboBox x:Name="DisplayModeCombobox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="210" SelectionChanged="DisplayModeCombobox_SelectionChanged" SelectedIndex="1">
+            <ComboBoxItem>Windowed</ComboBoxItem>
+            <ComboBoxItem>Windowed Fullscreen</ComboBoxItem>
+            <ComboBoxItem>Fullscreen</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="DisplayModeLabel" Content="Display Mode" HorizontalAlignment="Left" Margin="242,8,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="MaxFpsLabel" Content="Framerate cap" HorizontalAlignment="Left" Margin="242,39,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="MaxLabelTextbox" HorizontalAlignment="Left" Margin="10,43,0,0" Text="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+
+        <CheckBox x:Name="CustomCheckbox" Content="Use custom settings?" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" IsChecked="True"/>
+
+        <ComboBox x:Name="PresetCombobox" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Width="210" SelectedIndex="0">
+            <ComboBoxItem>Very fast</ComboBoxItem>
+            <ComboBoxItem>Fast</ComboBoxItem>
+            <ComboBoxItem>Nice</ComboBoxItem>
+            <ComboBoxItem>Very nice</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="PresetLabel" Content="Settings preset" HorizontalAlignment="Left" Margin="242,100,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="AntialiasingCombobox" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="210" SelectedIndex="0">
+            <ComboBoxItem>None</ComboBoxItem>
+            <ComboBoxItem>2x MSAA</ComboBoxItem>
+            <ComboBoxItem>4x MSAA</ComboBoxItem>
+            <ComboBoxItem>6x MSAA</ComboBoxItem>
+            <ComboBoxItem>8x MSAA</ComboBoxItem>
+            <ComboBoxItem>16x MSAA</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="AntialiasingLabel" Content="Antialiasing" HorizontalAlignment="Left" Margin="242,132,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="DeferredAntialiasingCombobox" HorizontalAlignment="Left" Margin="357,134,0,0" VerticalAlignment="Top" Width="210">
+            <ComboBoxItem>None</ComboBoxItem>
+            <ComboBoxItem>FXAA</ComboBoxItem>
+            <ComboBoxItem>TAA</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="DeferredAntialiasingLabel" Content="Deferred Antialiasing" HorizontalAlignment="Left" Margin="589,132,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="TextureQualityCombobox" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="210">
+            <ComboBoxItem>Very low</ComboBoxItem>
+            <ComboBoxItem>Low</ComboBoxItem>
+            <ComboBoxItem>Medium</ComboBoxItem>
+            <ComboBoxItem>High</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="TextureQualityLabel" Content="Texture quality" HorizontalAlignment="Left" Margin="242,163,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="TextureFilteringCombobox" HorizontalAlignment="Left" Margin="357,165,0,0" VerticalAlignment="Top" Width="210">
+            <ComboBoxItem>Bilinear</ComboBoxItem>
+            <ComboBoxItem>Trilinear</ComboBoxItem>
+            <ComboBoxItem>Anisotropic 4x</ComboBoxItem>
+            <ComboBoxItem>Anisotropic 8x</ComboBoxItem>
+            <ComboBoxItem>Anisotropic 16x</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="TextureFilteringCombo" Content="Texture filtering" HorizontalAlignment="Left" Margin="589,163,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="ShaderQualityCombobox" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Width="210">
+            <ComboBoxItem>Very fast</ComboBoxItem>
+            <ComboBoxItem>Fast</ComboBoxItem>
+            <ComboBoxItem>Nice</ComboBoxItem>
+            <ComboBoxItem>Very nice</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="ShaderQualityLabel" Content="Shader quality" HorizontalAlignment="Left" Margin="242,194,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="GeometryQualityCombobox" HorizontalAlignment="Left" Margin="10,227,0,0" VerticalAlignment="Top" Width="210">
+            <ComboBoxItem>Very fast</ComboBoxItem>
+            <ComboBoxItem>Fast</ComboBoxItem>
+            <ComboBoxItem>Nice</ComboBoxItem>
+            <ComboBoxItem>Very nice</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="GeometryQualityLabel" Content="Geometry quality" HorizontalAlignment="Left" Margin="242,225,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="ShadowQualityCombobox" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Width="210">
+            <ComboBoxItem>None</ComboBoxItem>
+            <ComboBoxItem>High</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="ShadowQualityLabel" Content="Shadow quality" HorizontalAlignment="Left" Margin="242,256,0,0" VerticalAlignment="Top"/>
+        
+        <CheckBox x:Name="Decor2DCheckbox" Content="2D Decor" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Decor3DCheckbox" Content="3D Decor" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top"/>
+
+
+
+    </Grid>
+</Page>

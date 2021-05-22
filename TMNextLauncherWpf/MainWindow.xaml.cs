@@ -24,7 +24,7 @@ namespace TMNextLauncherWpf
     public partial class MainWindow : Window
     {
 
-        SettingsController settings;
+        public SettingsController settings;
 
         public MainWindow()
         {
@@ -56,11 +56,19 @@ namespace TMNextLauncherWpf
 
         private void GraphicsSettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(new GraphicsSettingsPage());
+            // instantiate page object
+            GraphicsSettingsPage page = new GraphicsSettingsPage();
+
+            // pass over settings and change combobox to adequate values
+            page.displaySettings(this.settings);
+
+            // display page
+            ContentFrame.Navigate(page);
         }
 
         private void AudioSettingsButton_Click(object sender, RoutedEventArgs e)
         {
+            
 
         }
 
