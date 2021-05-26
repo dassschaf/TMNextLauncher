@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +21,37 @@ namespace TMNextLauncherWpf.Pages
     {
         public SettingsController settings;
 
+        Dictionary<string, string> jsonWordPairs = new Dictionary<string, string>
+        {
+            ["Windowed"] = "windowed",
+            ["Windowed Fullscreen"] = "windowfull",
+            ["Fullscreen"] = "fullscreen",
+            ["Very fast"] = "very_fast",
+            ["Fast"] = "fast",
+            ["Nice"] = "nice",
+            ["Very nice"] = "very_nice",
+            ["Very low"] = "very_low",
+            ["Low"] = "low",
+            ["Medium"] = "medium",
+            ["High"] = "high",
+            ["None"] = "none",
+            ["Off"] = "off",
+            ["On"] = "on",
+            ["High in Replays"] = "highinreplay",
+            ["FXAA"] = "_fxaa",
+            ["TXAA"] = "_txaa",
+            ["Anisotropic x4"] = "anisotropic__4x",
+            ["Anisotropic x8"] = "anisotropic__8x",
+            ["Anisotropic x16"] = "anisotropic__16x",
+            ["Trilinear"] = "trilinear",
+            ["Bilinear"] = "bilinear",
+            ["2x MSAA"] = "_2_samples",
+            ["4x MSAA"] = "_4_samples",
+            ["6x MSAA"] = "_6_samples",
+            ["8x MSAA"] = "_8_samples",
+            ["16x MSAA"] = "_16_samples"
+        };
+
         public GraphicsSettingsPage()
         {
             InitializeComponent();
@@ -28,8 +60,6 @@ namespace TMNextLauncherWpf.Pages
         public void displaySettings(SettingsController set)
         {
             this.settings = set;
-
-            DisplayModeCombobox.SelectedItem = 
         }
 
         /// <summary>
@@ -39,6 +69,17 @@ namespace TMNextLauncherWpf.Pages
         /// <returns></returns>
         private string dejsonify(string s)
         {
+            if (jsonWordPairs.ContainsValue(s))
+            {
+                // since our values are unique, we can just get the first fitting result
+                return jsonWordPairs.FirstOrDefault(x => x.Value == s).Key;
+            }
+
+            else
+            {
+                // we're in trouble.
+                return "";
+            }
         }
 
         /// <summary>
@@ -48,36 +89,17 @@ namespace TMNextLauncherWpf.Pages
         /// <returns></returns>
         private string jsonify(string s)
         {
-            if (s == "Windowed") return "windowed";
-            if (s == "Windowed Fullscreen") return "windowfull";
-            if (s == "Fullscreen") return "fullscreen";
-            if (s == "Very fast") return "very_fast";
-            if (s == "Fast") return "fast";
-            if (s == "Nice") return "nice";
-            if (s == "Very nice") return "very_nice";
-            if (s == "Very low") return "very_low";
-            if (s == "Low") return "low";
-            if (s == "Medium") return "medium";
-            if (s == "High") return "high";
-            if (s == "None") return "none";
-            if (s == "Off") return "off";
-            if (s == "On") return "on";
-            if (s == "High in Replays") return "highinreplay";
-            if (s == "FXAA") return "_fxaa";
-            if (s == "TXAA") return "_txaa";
-            if (s == "Anisotropic x4") return "anisotropic__4x";
-            if (s == "Anisotropic x8") return "anisotropic__8x";
-            if (s == "Anisotropic x16") return "anisotropic__16x";
-            if (s == "Trilinear") return "trilinear";
-            if (s == "Bilinear") return "bilinear";
-            if (s == "2x MSAA") return "_2_samples";
-            if (s == "4x MSAA") return "_4_samples";
-            if (s == "6x MSAA") return "_6_samples";
-            if (s == "8x MSAA") return "_8_samples";
-            if (s == "16x MSAA") return "_16_samples";
+            if (jsonWordPairs.ContainsKey(s))
+            {
+                // get value
+                return jsonWordPairs[s];
+            }
 
-            // nothing matches; return ""
-            return "";
+            else
+            {
+                // we're in trouble, again.
+                return "";
+            }
         }
 
         /// <summary>
